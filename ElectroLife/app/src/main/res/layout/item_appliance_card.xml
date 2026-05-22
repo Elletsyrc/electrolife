@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appliance_card_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="1.5dp"
+    app:strokeColor="@color/gray_200">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btn_remove"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            app:tint="@color/gray_400"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_custom_limit_badge"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_settings"
+            app:tint="@color/blue_600"
+            android:visibility="gone"
+            android:contentDescription="Custom Limit Active"
+            app:layout_constraintBottom_toBottomOf="@id/btn_remove"
+            app:layout_constraintEnd_toStartOf="@id/btn_remove"
+            app:layout_constraintTop_toTopOf="@id/btn_remove" />
+
+        <FrameLayout
+            android:id="@+id/icon_container"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_blue_rounded"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_appliance_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_monitor"
+                app:tint="@color/blue_600"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_appliance_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:text="Desktop Computer"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/gray_900"
+            app:layout_constraintTop_toTopOf="@id/icon_container"
+            app:layout_constraintStart_toEndOf="@id/icon_container"
+            app:layout_constraintEnd_toStartOf="@id/iv_custom_limit_badge"
+            app:layout_goneMarginEnd="32dp" />
+
+        <TextView
+            android:id="@+id/tv_appliance_wattage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200 W"
+            android:textSize="12sp"
+            android:textColor="@color/gray_500"
+            app:layout_constraintTop_toBottomOf="@id/tv_appliance_name"
+            app:layout_constraintStart_toStartOf="@id/tv_appliance_name"/>
+
+        <TextView
+            android:id="@+id/tv_appliance_kwh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="0.00 kWh/day"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="@color/blue_600"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_appliance_wattage"
+            app:layout_constraintStart_toEndOf="@+id/tv_appliance_wattage"
+            app:layout_constraintTop_toTopOf="@+id/tv_appliance_wattage" />
+
+        <TextView
+            android:id="@+id/tv_hours_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Hours per day"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/gray_600"
+            app:layout_constraintTop_toBottomOf="@id/icon_container"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_hours_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8.0h"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue_600"
+            app:layout_constraintTop_toTopOf="@id/tv_hours_label"
+            app:layout_constraintBottom_toBottomOf="@id/tv_hours_label"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_stopwatch_toggle"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="0dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="28dp"
+            app:iconTint="@color/blue_600"
+            app:layout_constraintBottom_toBottomOf="@id/slider_hours"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/slider_hours" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_hours"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:valueFrom="0.0"
+            android:valueTo="24.0"
+            android:stepSize="0.5"
+            android:value="8.0"
+            app:layout_constraintTop_toBottomOf="@id/tv_hours_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_stopwatch_toggle"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_200"
+            app:layout_constraintTop_toBottomOf="@id/slider_hours"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/divider">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Per Hour" android:textSize="12sp" android:textColor="@color/gray_500"/>
+                <TextView android:id="@+id/tv_cost_hour" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.02" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/gray_900"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Per Day" android:textSize="12sp" android:textColor="@color/gray_500"/>
+                <TextView android:id="@+id/tv_cost_day" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$0.19" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/gray_900"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Monthly" android:textSize="12sp" android:textColor="@color/gray_500"/>
+                <TextView android:id="@+id/tv_cost_month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$5.76" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/green_600"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

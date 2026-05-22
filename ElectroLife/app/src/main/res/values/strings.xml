@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ElectroLife</string>
+    <string name="title_appliances">Your Appliances</string>
+    <string name="action_add_appliance">Add Appliance</string>
+
+    <string name="marketing_intro_title">Welcome to ElectroLife</string>
+    <string name="marketing_intro_desc">Take full control of your monthly electricity bill with smart tracking.</string>
+    <string name="marketing_feature_analytics">Real-Time Analytics</string>
+    <string name="marketing_feature_analytics_desc">Visualize exactly how much each device costs you in real time.</string>
+    <string name="marketing_feature_budget">Stay On Budget</string>
+    <string name="marketing_feature_budget_desc">Set financial goals and get notified before you overspend.</string>
+    <string name="onboarding_setup_title">Initial Configuration</string>
+    <string name="onboarding_setup_subtitle">Let\'s set your baselines for accurate calculations.</string>
+    <string name="onboarding_finish_button">Finish Setup &amp; Start Saving</string>
+
+    <string name="category_kitchen">Kitchen</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_cooling">Cooling</string>
+    <string name="category_all">All</string>
+
+    <string name="appliances_count_zero">Your Appliances (0)</string>
+    <string name="appliances_count_format">Your Appliances (%d)</string>
+    <string name="energy_stats_format">Energy: %.3f kWh/hr | %.1f kWh/day | %.1f kWh/mo</string>
+    <string name="budget_progress_format">Budget Progress: %1$s / %2$s</string>
+    <string name="kwh_progress_format">Monthly Energy Limit: %.1f / %.1f kWh</string>
+    <string name="top_consumer_item_format">• %1$s: %2$s per month</string>
+    <string name="wattage_format">%1$.0f Watts</string>
+    <string name="rec_action_format">Recommendation: %1$s</string>
+
+    <string name="btn_archive_current_month">Archive Current Month Data</string>
+    <string name="archive_success_message">Success! Your %1$s data has been moved to History! 📁</string>
+    <string name="empty_history_message">No archived months found. Use the Calculator to save data!</string>
+
+    <string name="loading_device">Synchronizing Device Data…</string>
+    <string name="rate_helper_text">Find this value on your latest utility provider bill.</string>
+    <string name="budget_helper_text">Maximum amount you wish to spend on electricity monthly.</string>
+</resources>
