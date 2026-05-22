@@ -35,12 +35,12 @@ The app is designed to help users **track, manage, and optimize** their daily el
   
 * **Offline-First Architecture:** All user data, appliance history, and settings are stored securely on the device using a local `Room` Database. The app functions perfectly without an internet connection.
 
-##Prerequisites
+## Prerequisites
 * Android Studio (Jellyfish or newer recommended).
 * Android SDK API 34+ installed.
 * An Android Emulator or a physical Android device (API 24+).
 
-#Installation & Run
+## Installation & Run
 Clone the repository (or extract the source code folder):
 
 Bash
